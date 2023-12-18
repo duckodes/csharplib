@@ -1,0 +1,155 @@
+.display {
+    background-color: rgb(75, 75, 75);
+}
+
+.snowflake {
+    user-select: none;
+    position: absolute;
+    color: #ffffff50;
+    font-size: 24px;
+    top: 50px;
+    animation: snowfall linear infinite;
+    transition: opacity 1s;
+    z-index: 0;
+}
+
+@keyframes snowfall {
+    0% {
+        top: 50px;
+    }
+
+    100% {
+        top: 100vh;
+    }
+}
+
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+img.no-drag {
+    -webkit-user-drag: none;
+}
+
+.pic-item {
+    height: 700px;
+    z-index: 1;
+}
+
+.pic-leftbtn {
+    opacity: 0.3;
+}
+
+.pic-leftbtn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.pic-prvbtn {
+    animation: pic-prvbtn-unhov 0.5s forwards;
+}
+
+.pic-prvbtn:hover {
+    animation: pic-prvbtn 0.5s forwards;
+}
+
+@keyframes pic-prvbtn {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes pic-prvbtn-unhov {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.pic-nexbtn {
+    animation: pic-nexbtn-unhov 0.5s forwards;
+}
+
+.pic-nexbtn:hover {
+    animation: pic-nexbtn 0.5s forwards;
+}
+
+@keyframes pic-nexbtn {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes pic-nexbtn-unhov {
+    0% {
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        transform: rotate(-90deg);
+    }
+}
+
+.life-snowrot:hover {
+    cursor: pointer;
+    animation: life-snowrot 5s linear infinite;
+}
+
+@keyframes life-snowrot {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.first-text {
+    cursor: pointer;
+    animation: first-textanib 0.5s ease-out;
+    font-size: 50px;
+    color: white;
+}
+.first-text:hover {
+    cursor: pointer;
+    animation: first-textani 0.5s ease-out;
+    font-size: 52px;
+    color: red;
+}
+@keyframes first-textani {
+    0% {
+        font-size: 50px;
+        color: white;
+    }
+
+    100% {
+        font-size: 52px;
+        color: red;
+    }
+}
+@keyframes first-textanib {
+    0% {
+        font-size: 52px;
+        color: red;
+    }
+
+    100% {
+        font-size: 50px;
+        color: white;
+    }
+}
