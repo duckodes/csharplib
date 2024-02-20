@@ -7,15 +7,20 @@ body {
     width: 70%;
 }
 
-/*code {
-    max-height: 350px;
+pre {
+    overflow: hidden;
+    word-break: break-all;
+}
+
+code {
+    /* max-height: 350px; */
     overflow: auto;
-    scrollbar-width: thin;*/
+    scrollbar-width: thin;
     /* Firefox */
-    /*scrollbar-color: #1e1e1e #707070;
+    scrollbar-color: #1e1e1e #707070;
     z-index: 0;
     min-width: 300px;
-}*/
+}
 
 code::-webkit-scrollbar {
     width: 7px;
