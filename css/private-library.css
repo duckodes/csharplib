@@ -40,6 +40,7 @@ code {
     margin: 5px;
     transition: width 0.3s ease-in-out;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-overflow: ellipsis;
 }
 
 .search-bar:focus {
