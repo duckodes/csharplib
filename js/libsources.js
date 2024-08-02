@@ -5,14 +5,6 @@ var libsources = (function () {
         hide: hide
     };
     function init() {
-        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/i9RL6x1tAAUC0rKwbveo.localstorage', (text) => {
-            if (storageutils.get(text)) {
-                show();
-            }
-            else {
-                hide();
-            }
-        });
         var blacklibsources = document.querySelectorAll('.black-lib-sources');
         var whitelibsources = document.querySelectorAll('.white-lib-sources');
         blacklibsources.forEach(function (element) {

@@ -1,44 +1,30 @@
 body {
     background-color: #353535;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 80px;
-    margin-left: 15%;
-    width: 70%;
+    margin-top: 100px;
 }
 
 pre {
+    width: 100dvw;
+    max-width: 1000px;
+    padding: 20px;
     overflow: hidden;
     word-break: break-all;
 }
 
 code {
-    /* max-height: 350px; */
+    white-space: var(--code-white-space);
     overflow: auto;
     scrollbar-width: thin;
-    /* Firefox */
-    scrollbar-color: #1e1e1e #707070;
+    scrollbar-color: #707070 transparent;
     z-index: 0;
 }
 
-code::-webkit-scrollbar {
-    width: 7px;
-    height: 0px;
-    border-radius: 7px;
-    color: #1a1a1a;
-}
-
-code::-webkit-scrollbar-thumb {
-    background: #707070;
-    border-radius: 7px;
-}
-
-code::-webkit-scrollbar-track {
-    background: #1e1e1e;
-}
-
-code::-webkit-scrollbar-corner {
-    background-color: #1e1e1e;
+.navbar {
+    display: flex;
+    justify-content: center;
 }
 
 .search-bar {
@@ -59,6 +45,10 @@ code::-webkit-scrollbar-corner {
 .search-bar:focus {
     border-color: #7dcfff;
     width: 100%;
+}
+
+.search-bar::placeholder {
+    font-size: 25px;
 }
 
 .lib-sources {

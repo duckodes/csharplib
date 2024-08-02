@@ -26,9 +26,11 @@
     width: 100%;">
         <div class="container justify-content-center">
             <ul class="nav justify-content-center">
-                <input type="text" class="search-bar" placeholder="🔍︎" />
+                <input type="text" class="search-bar" placeholder="⌕" />
                 <li class="nav-item">
-                    <div class="nav-link text-light"><div id="option">⋮</div></div>
+                    <div class="nav-link text-light">
+                        <div id="option">⋮</div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -117,10 +119,10 @@
 
     <!-- Code -->
     <div class="no-select"
-        style="color: white;width: 100%;margin-bottom: -50px;text-align: center;white-space: pre-line;">
+        style="color: white;width: 100%;margin-bottom: -50px;text-align: center;white-space: pre-line;display: flex;flex-direction: column;align-items: center;">
         <br><br>
         <h2>Example</h2>
-        <h6 style="border: 3px solid rgb(255, 68, 68);border-radius: 10px;">
+        <h6 style="border: 1px dashed #ff4949;width: 100%;max-width: 1000px;">
             <br>
 
             此段區域說明用途及內容
@@ -135,7 +137,7 @@
         <br>
     </div>
     <pre><div id="code-copy-Example-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-Example-cs">
-        </code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Example.cs  </div></pre>
+        </code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Example.cs  </div></pre>
     <br>
     <br>
     <span class="mark-place"
@@ -185,9 +187,6 @@
 </script>
 <script src="js/storageutils.js"></script>
 <script src="js/themepackage.js"></script>
-<script>
-    themepackage.init("code-style");
-</script>
 <script src="js/buttonutils.js"></script>
 <script src="js/contextmenuutils.js"></script>
 <script src="js/liboption.js"></script>

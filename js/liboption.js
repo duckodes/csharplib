@@ -3,6 +3,48 @@ var liboption = (function () {
         init: init
     }
     function init() {
+        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/8hR7kL3pQ9sT6wE2.localstorage', (text) => {
+            if (storageutils.get(text)) {
+                themepackage.tokyonightdark("code-style");
+            }
+            else {
+                themepackage.vs2015("code-style");
+            }
+        });
+        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/i9RL6x1tAAUC0rKwbveo.localstorage', (text) => {
+            if (storageutils.get(text)) {
+                libsources.show();
+            }
+            else {
+                libsources.hide();
+            }
+        });
+        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/sdWs5sd5f48Dsdf47F65.localstorage', (text) => {
+            if (storageutils.get(text)) {
+                document.querySelector('code').style.setProperty('--code-white-space', 'pre-wrap');
+            }
+            else {
+                document.querySelector('code').style.setProperty('--code-white-space', 'unset');
+            }
+        });
+        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
+            if (storageutils.get(text)) {
+                setTimeout(() => {
+                    var codeBlock = document.querySelectorAll('code');
+                    codeBlock.forEach(element => {
+                        var codeText = element.innerText;
+                        var lines = codeText.split('\n');
+                        var numberedCode = '';
+                        for (var i = 0; i < lines.length; i++) {
+                            numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1) + ' ' + lines[i] + '\n';
+                        }
+                        element.innerText = numberedCode;
+                        element.innerHTML = hljs.highlightAuto(element.innerText).value;
+                        element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '');
+                    });
+                }, 1000);
+            }
+        });
         var option = document.getElementById("option");
 
         option.addEventListener("click", () => {
@@ -57,6 +99,46 @@ var liboption = (function () {
                                     else {
                                         libsources.hide();
                                     }
+                                }
+                            });
+                        });
+                        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/sdWs5sd5f48Dsdf47F65.localstorage', (text) => {
+                            var bbtn = document.createElement("div");
+                            bbtn.style.display = "flex";
+                            bbtn.style.alignItems = "center";
+                            bbtn.style.flexDirection = "row";
+                            var btn = document.createElement("div");
+                            btn.innerText = "代碼換行樣式";
+                            btn.style.width = "70%";
+                            c.appendChild(bbtn);
+                            bbtn.appendChild(btn);
+                            buttonutils.swb({
+                                a: storageutils.get(text), bsw: "40px", csw: "14px", bsh: "20px", csh: "14px", bsbdr: "15px", csbdr: "15px", fs: 5,
+                                bsb: "#777", bsba: "#336", csb: "#333", csba: "#558", p: bbtn, fc(atv) {
+                                    storageutils.set(text, atv);
+                                    if (atv) {
+                                        document.querySelector('code').style.setProperty('--code-white-space', 'pre-wrap');
+                                    }
+                                    else {
+                                        document.querySelector('code').style.setProperty('--code-white-space', 'unset');
+                                    }
+                                }
+                            });
+                        });
+                        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
+                            var bbtn = document.createElement("div");
+                            bbtn.style.display = "flex";
+                            bbtn.style.alignItems = "center";
+                            bbtn.style.flexDirection = "row";
+                            var btn = document.createElement("div");
+                            btn.innerText = "自動填入行數";
+                            btn.style.width = "70%";
+                            c.appendChild(bbtn);
+                            bbtn.appendChild(btn);
+                            buttonutils.swb({
+                                a: storageutils.get(text), bsw: "40px", csw: "14px", bsh: "20px", csh: "14px", bsbdr: "15px", csbdr: "15px", fs: 5,
+                                bsb: "#777", bsba: "#336", csb: "#333", csba: "#558", p: bbtn, fc(atv) {
+                                    storageutils.set(text, atv);
                                 }
                             });
                         });

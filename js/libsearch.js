@@ -5,16 +5,19 @@ var libsearch = (function () {
     function init() {
         var navb = document.querySelector('.navbar');
         var searchbuttonarea = document.createElement("div");
-        searchbuttonarea.style.backgroundColor = "white";
+        searchbuttonarea.className = 'search-button-area';
         searchbuttonarea.style.width = "100%";
-        searchbuttonarea.style.height = "50%";
-        searchbuttonarea.style.marginLeft = "25%";
-        searchbuttonarea.style.marginRight = "25%";
+        searchbuttonarea.style.maxWidth = "500px";
+        searchbuttonarea.style.height = "auto";
+        searchbuttonarea.style.maxHeight = "500px";
+        searchbuttonarea.style.marginLeft = "20px";
+        searchbuttonarea.style.marginRight = "20px";
         searchbuttonarea.style.top = "20%";
-        searchbuttonarea.style.display = "flex";
+        searchbuttonarea.style.display = "none";
         searchbuttonarea.style.flexDirection = "column";
         searchbuttonarea.style.background = "#1a1b26";
         searchbuttonarea.style.borderRadius = "20px";
+        searchbuttonarea.style.overflow = "auto";
         navb.appendChild(searchbuttonarea);
         var source = ["AudioCollection", "Counter", "DraggablePanel", "InitializationEvent", "MenuGeneric", "Searcher", "Timer", "UI-Sizer"];
         var searchbar = document.querySelector('.search-bar');
@@ -30,13 +33,18 @@ var libsearch = (function () {
                 button.style.display = "flex";
                 button.style.alignItems = "left";
                 button.style.height = "auto";
-                button.style.minHeight = "40px";
                 button.style.paddingLeft = "5%";
                 button.style.color = "#7dcfff";
                 button.style.background = "#1a1b26";
                 button.style.borderRadius = "10px";
                 button.style.flexDirection = "column";
                 button.style.wordBreak = "break-all";
+                button.addEventListener("touchstart", () => {
+                    button.style.background = "#2b2c37";
+                });
+                button.addEventListener("touchend", () => {
+                    button.style.background = "#1a1b26";
+                });
                 button.addEventListener("mouseenter", () => {
                     button.style.background = "#2b2c37";
                     searchbarfocus = false;
@@ -80,13 +88,18 @@ var libsearch = (function () {
                 button.style.display = "flex";
                 button.style.alignItems = "left";
                 button.style.height = "auto";
-                button.style.minHeight = "40px";
                 button.style.paddingLeft = "5%";
                 button.style.color = "#7dcfff";
                 button.style.background = "#1a1b26";
                 button.style.borderRadius = "10px";
                 button.style.flexDirection = "column";
                 button.style.wordBreak = "break-all";
+                button.addEventListener("touchstart", () => {
+                    button.style.background = "#2b2c37";
+                });
+                button.addEventListener("touchend", () => {
+                    button.style.background = "#1a1b26";
+                });
                 button.addEventListener("mouseenter", () => {
                     button.style.background = "#2b2c37";
                     searchbarfocus = false;
@@ -251,7 +264,7 @@ var libsearch = (function () {
                 }, 100);
             }
         }
-        function searchbarinit(){
+        function searchbarinit() {
             if (window.location.pathname !== "/index.html" && window.location.pathname !== "/Lib/index.html") {
                 searchbar.value = paramname.getParameterByName('v', window.location.href);
                 document.title = searchbar.value;

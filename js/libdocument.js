@@ -69,7 +69,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-Counter-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-Counter-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Counter.cs  </div></pre>';
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Counter.cs  </div></pre>';
         document.body.innerHTML += src;
         redis();
         setTimeout(() => {
@@ -105,7 +105,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-AudioCollection-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-AudioCollection-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">AudioCollection.cs  </div></pre>';
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">AudioCollection.cs  </div></pre>';
         document.body.innerHTML += src;
         redis();
         setTimeout(() => {
@@ -149,7 +149,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br></div><div id="code-copy-DraggablePanel-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-DraggablePanel-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">DraggablePanel.cs  </div></pre>';
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">DraggablePanel.cs  </div></pre>';
         document.body.innerHTML += src;
         redis();
         setTimeout(() => {
@@ -185,7 +185,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-InitializationEvent-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-InitializationEvent-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">InitializationEvent.cs  </div></pre>';
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">InitializationEvent.cs  </div></pre>';
         document.body.innerHTML += src;
         redis();
         setTimeout(() => {
@@ -226,7 +226,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-MenuGeneric-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-MenuGeneric-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">MenuGeneric.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">MenuGeneric.cs  </div></pre>' +
             '<pre class="re-link" style="border-radius: 10px;"><code>示範寫法 1.' +
             '\n&ensp;&ensp;&ensp;&ensp;StartMenu(new Vector2(0, 0), out GenericMenu menu, out Vector2 menuPosition);' +
             '\n&ensp;&ensp;&ensp;&ensp;AddMenu(menu, "Test1", false, () => { //TODO:點擊菜單作用域 });' +
@@ -275,7 +275,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-Searcher-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-Searcher-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Searcher.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Searcher.cs  </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -286,7 +286,7 @@ var libdocument = (function () {
             '<br><br><br>以 Unity GUI System 作為範例' +
             '</h6>' +
             '<br><br><br></div><div id="code-copy-CustomSearch-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-CustomSearch-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">CustomSearch.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">CustomSearch.cs  </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -306,7 +306,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br></div><div id="code-copy-Search-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-Search-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Search.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Search.cs  </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -325,7 +325,7 @@ var libdocument = (function () {
             '<div  style="white-space: nowrap;">' +
             '</div>' +
             '<br><br><br><br><br></div><div id="code-copy-SearchEx1-0-2-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-SearchEx1-0-2-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Search.cs(1.0.2)   </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Search.cs(1.0.2)   </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -349,7 +349,7 @@ var libdocument = (function () {
             '<div  style="white-space: nowrap;">' +
             '</div>' +
             '<br><br><br><br><br></div><div id="code-copy-SearchEx1-0-3-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-SearchEx1-0-3-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Search.cs(1.0.3)   </div></pre>';
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Search.cs(1.0.3)   </div></pre>';
         document.body.innerHTML += src;
         redis(300);
         setTimeout(() => {
@@ -410,7 +410,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-Timer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-Timer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">Timer.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Timer.cs  </div></pre>' +
             '<pre class="re-link" style="border-radius: 10px;"><code>示範寫法 1.' +
             '\n    public class Test : MonoBehaviour' +
             '\n    {' +
@@ -475,7 +475,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-RectTransformSizer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-RectTransformSizer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">RectTransformSizer.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">RectTransformSizer.cs  </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -496,7 +496,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-RectTransformScaler-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-RectTransformScaler-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">RectTransformScaler.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">RectTransformScaler.cs  </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -517,7 +517,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-LegacyTextSizer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-LegacyTextSizer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">LegacyTextSizer.cs  </div></pre>' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">LegacyTextSizer.cs  </div></pre>' +
 
             '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -538,7 +538,7 @@ var libdocument = (function () {
             '</span>' +
             '</h6>' +
             '<br><br><br><br></div><div id="code-copy-TMPTextSizer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-TMPTextSizer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;height: 25px; border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;" title="下載">TMPTextSizer.cs  </div></pre>';
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">TMPTextSizer.cs  </div></pre>';
         document.body.innerHTML += src;
         redis(300);
         setTimeout(() => {
