@@ -4,7 +4,10 @@ var libdocument = (function () {
     };
     function init() {
         if (paramname.getParameterByName("v", window.location.href)) {
-            if (paramname.getParameterByName("v", window.location.href).includes("AudioCollection")) {
+            if (paramname.getParameterByName("v", window.location.href).includes("AESEncryption")) {
+                AddDocument("AES 加密解密", "加密資料來源", "", "AESEncryption.cs", "AESEncryption", 'Resource/OriginFile/csharpFile/Security/AESEncryption.cs', true);
+            }
+            else if (paramname.getParameterByName("v", window.location.href).includes("AudioCollection")) {
                 AudioCollection(true);
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Counter")) {
@@ -13,14 +16,23 @@ var libdocument = (function () {
             else if (paramname.getParameterByName("v", window.location.href).includes("DraggablePanel")) {
                 DraggablePanel(true);
             }
+            else if (paramname.getParameterByName("v", window.location.href).includes("FloatAES")) {
+                AddDocument("FloatAES 浮點AES使用", "加密資料來源", "", "FloatAES.cs", "FloatAES", 'Resource/OriginFile/csharpFile/Security/FloatAES.cs', true);
+            }
             else if (paramname.getParameterByName("v", window.location.href).includes("InitializationEvent")) {
                 InitializationEvent(true);
+            }
+            else if (paramname.getParameterByName("v", window.location.href).includes("IntAES")) {
+                AddDocument("IntAES 整數AES使用", "加密資料來源", "", "IntAES.cs", "IntAES", 'Resource/OriginFile/csharpFile/Security/IntAES.cs', true);
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("MenuGeneric")) {
                 MenuGeneric(true);
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Searcher")) {
                 Searcher(true);
+            }
+            else if (paramname.getParameterByName("v", window.location.href).includes("StringAES")) {
+                AddDocument("StringAES 字串AES使用", "加密資料來源", "", "StringAES.cs", "StringAES", 'Resource/OriginFile/csharpFile/Security/StringAES.cs', true);
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Timer")) {
                 Timer(true);
@@ -48,6 +60,41 @@ var libdocument = (function () {
                 return "請輸入以英文字母開頭的字串。";
             }
         }
+    }
+    function AddDocument(title, todo, variables, filename, identifier, csfileUrl, ck) {
+        var src = '<!-- Code -->' +
+            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
+            '<br><br><br><h2>' + title + '</h2>' +
+            '<h6>' +
+            '<br><br>作用: ' + todo +
+
+            '<span class="mark-place">' +
+            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
+            variables +
+            '</span>' +
+            '</h6>' +
+            '<br><br><br><br></div><div id="code-copy-' + identifier + '-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="languange-hlsl" id="code-text-' + identifier + '-cs">' +
+            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">' + filename +'  </div></pre>';
+        document.body.innerHTML += src;
+        redis();
+        setTimeout(() => {
+            fileutils.filetextinelement('code-text-' + identifier + '-cs', csfileUrl, (t, text) => {
+                t.textContent = text;
+            }, () => {
+                if (ck) {
+                    copycode("code-copy-"+ identifier + "-cs", "code-text-" + identifier + "-cs");
+                    var downloadFiler = document.querySelectorAll('.download-file');
+                    downloadFiler.forEach(function (e) {
+                        e.addEventListener("click", () => {
+                            if (e.innerText === filename + "  ") {
+                                fileutils.download(filename, csfileUrl);
+                            }
+                        });
+                    });
+                    hljs.highlightAll();
+                }
+            });
+        }, 100);
     }
     function Counter(ck) {
         var src = '<!-- Code -->' +

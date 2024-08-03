@@ -19,7 +19,19 @@ var libsearch = (function () {
         searchbuttonarea.style.borderRadius = "20px";
         searchbuttonarea.style.overflow = "auto";
         navb.appendChild(searchbuttonarea);
-        var source = ["AudioCollection", "Counter", "DraggablePanel", "InitializationEvent", "MenuGeneric", "Searcher", "Timer", "UI-Sizer"];
+        var source = [
+            "AESEncryption",
+            "AudioCollection",
+            "Counter",
+            "DraggablePanel",
+            "FloatAES",
+            "InitializationEvent",
+            "IntAES",
+            "MenuGeneric",
+            "Searcher",
+            "StringAES",
+            "Timer",
+            "UI-Sizer"];
         var searchbar = document.querySelector('.search-bar');
         var searchbarfocus = true;
         searchbar.addEventListener("input", () => {
@@ -191,7 +203,12 @@ var libsearch = (function () {
         }
         function LibTags(b) {
             const tagbase = document.createElement('div');
-            if (b.textContent === "AudioCollection") {
+            if (b.textContent === "AESEncryption") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                poco();
+            }
+            else if (b.textContent === "AudioCollection") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
                 b.appendChild(tagbase);
                 engine();
@@ -206,10 +223,20 @@ var libsearch = (function () {
                 b.appendChild(tagbase);
                 engine();
             }
+            else if (b.textContent === "FloatAES") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                poco();
+            }
             else if (b.textContent === "InitializationEvent") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
                 b.appendChild(tagbase);
                 engine();
+            }
+            else if (b.textContent === "IntAES") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                poco();
             }
             else if (b.textContent === "MenuGeneric") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
@@ -220,6 +247,11 @@ var libsearch = (function () {
                 b.innerHTML += "&nbsp;&nbsp;\n";
                 b.appendChild(tagbase);
                 engine(); poco();
+            }
+            else if (b.textContent === "StringAES") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                poco();
             }
             else if (b.textContent === "Timer") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
@@ -244,12 +276,16 @@ var libsearch = (function () {
         }
         function onclicksearch(Text) {
             var a = document.createElement("a");
-            if (Text.replace("#Engine", "").trim() === "AudioCollection" ||
+            if (Text.replace("#POCO", "").trim() === "AESEncryption" ||
+                Text.replace("#Engine", "").trim() === "AudioCollection" ||
                 Text.replace("#Engine", "").trim() === "Counter" ||
                 Text.replace("#Engine", "").trim() === "DraggablePanel" ||
+                Text.replace("#POCO", "").trim() === "FloatAES" ||
                 Text.replace("#Engine", "").trim() === "InitializationEvent" ||
+                Text.replace("#POCO", "").trim() === "IntAES" ||
                 Text.replace("#POCO", "").trim() === "MenuGeneric" ||
                 Text.replace("#Engine", "").replace("#POCO", "").trim() === "Searcher" ||
+                Text.replace("#POCO", "").trim() === "StringAES" ||
                 Text.replace("#POCO", "").trim() === "Timer" ||
                 Text.replace("#Engine", "").trim() === "UI-Sizer") {
                 a.href = "UnityLibrary.html" + "?v=" + searchbar.value;
