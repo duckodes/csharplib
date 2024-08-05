@@ -4,8 +4,14 @@ function copycode(copybuttonid, textcopyid) {
     copyButton.addEventListener("click", function () {
         var text = textToCopy.textContent;
 
+        var lines = text.split('\n');
+        var processedLines = lines.map(function (line) {
+            return line.substring(3);
+        });
+        var processedCode = processedLines.join('\n');
+
         var tempTextArea = document.createElement("textarea");
-        tempTextArea.value = text;
+        tempTextArea.value = processedCode;
 
         tempTextArea.style.position = "fixed";
         tempTextArea.style.top = 0;
@@ -18,14 +24,14 @@ function copycode(copybuttonid, textcopyid) {
         document.body.removeChild(tempTextArea);
 
         copyButton.innerHTML = " ";
-        if(typeof createSVGAnonymous === 'function'){
+        if (typeof createSVGAnonymous === 'function') {
             var icon = createSVGAnonymous("28", "28");
             copyButton.appendChild(icon);
         }
         copyButton.innerHTML += " 已複製 ";
         setTimeout(function () {
             copyButton.innerHTML = " ";
-            if(typeof createSVGCopy === 'function'){
+            if (typeof createSVGCopy === 'function') {
                 var icon = createSVGCopy("currentColor", "1em");
                 copyButton.appendChild(icon);
             }

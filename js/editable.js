@@ -1,16 +1,48 @@
 var editable = (function () {
     return {
         editablecontent: editablecontent,
-        editablecontentHTML: editablecontentHTML
+        editablecontentHTML: editablecontentHTML,
+        editorFocus: false,
     };
     function editablecontent(id) {
         const editor = document.getElementById(id);
         editor.setAttribute("contenteditable", "true");
+        let isNotInitCodeNumber = false;
         editor.addEventListener('focus', () => {
-            editor.innerHTML = editor.innerText;
+            editable.editorFocus = true;
+            isNotInitCodeNumber = true;
+            if (liboption.isCodeNumberInit) {
+                var lines = editor.innerText.split('\n');
+                var processedLines = lines.map(function (line) {
+                    return line.substring(3);
+                });
+                var processedCode = processedLines.join('\n');
+                editor.innerHTML = processedCode;
+                editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
+            }
+            //editor.innerHTML = editor.innerText;
         });
         editor.addEventListener('blur', () => {
-            editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
+            editable.editorFocus = false;
+            fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
+                if (storageutils.get(text) && isNotInitCodeNumber) {
+                    var codeText = editor.innerText;
+                    var lines = codeText.split('\n');
+                    var numberedCode = '';
+                    for (var i = 0; i < lines.length; i++) {
+                        numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
+
+                        if (i < lines.length - 1) {
+                            numberedCode += '\n';
+                        }
+                    }
+                    editor.innerHTML = numberedCode;
+                    editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
+                    editor.innerHTML = editor.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
+                    liboption.isCodeNumberInit = true;
+                }
+            });
+            //editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
         });
         editor.addEventListener("input", () => {
             editor.scrollTop = editor.scrollHeight;

@@ -1,6 +1,7 @@
 var liboption = (function () {
     return {
-        init: init
+        init: init,
+        isCodeNumberInit: false
     }
     function init() {
         fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/8hR7kL3pQ9sT6wE2.localstorage', (text) => {
@@ -29,18 +30,53 @@ var liboption = (function () {
         });
         fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
             if (storageutils.get(text)) {
+                let timeoutId = setTimeout(() => {
+                    var codeBlock = document.querySelectorAll('code');
+                    codeBlock.forEach(element => {
+                        if (element.contentEditable === 'true') {
+                            var codeText = element.innerText;
+                            var lines = codeText.split('\n');
+                            var numberedCode = '';
+                            for (var i = 0; i < lines.length; i++) {
+                                numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
+
+                                if (i < lines.length - 1) {
+                                    numberedCode += '\n';
+                                }
+                            }
+                            element.innerHTML = numberedCode;
+                            element.innerHTML = hljs.highlightAuto(element.innerText).value;
+                            element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
+                            liboption.isCodeNumberInit = true;
+                        }
+                    });
+                }, 1000);
+                let timer = setInterval(() => {
+                    if (typeof editable !== 'undefined' && editable.editorFocus) {
+                        clearTimeout(timeoutId);
+                        clearInterval(timer);
+                    }
+                }, 100);
+
                 setTimeout(() => {
                     var codeBlock = document.querySelectorAll('code');
                     codeBlock.forEach(element => {
-                        var codeText = element.innerText;
-                        var lines = codeText.split('\n');
-                        var numberedCode = '';
-                        for (var i = 0; i < lines.length; i++) {
-                            numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1) + ' ' + lines[i] + '\n';
+                        if (element.contentEditable === 'inherit') {
+                            var codeText = element.innerText;
+                            var lines = codeText.split('\n');
+                            var numberedCode = '';
+                            for (var i = 0; i < lines.length; i++) {
+                                numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
+
+                                if (i < lines.length - 1) {
+                                    numberedCode += '\n';
+                                }
+                            }
+                            element.innerHTML = numberedCode;
+                            element.innerHTML = hljs.highlightAuto(element.innerText).value;
+                            element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
+                            liboption.isCodeNumberInit = true;
                         }
-                        element.innerText = numberedCode;
-                        element.innerHTML = hljs.highlightAuto(element.innerText).value;
-                        element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '');
                     });
                 }, 1000);
             }
