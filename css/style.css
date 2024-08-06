@@ -25,7 +25,8 @@ code {
     scrollbar-width: thin;
     scrollbar-color: #707070 transparent;
 }
-.info>code{
+
+.info>code {
     margin-bottom: 20px;
 }
 

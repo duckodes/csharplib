@@ -67,6 +67,26 @@ var libdocument = (function () {
                     `comming soon..:
                     `, 'Resource/OriginFile/csharpFile/Security/IntAES.cs');
             }
+            else if (paramname.getParameterByName("v", window.location.href).includes("LegacyTextSizer")) {
+                AddDocument('LegacyTextSizer', '作用: 動畫縮放UI Toolkit LegacyText',
+                    `# Inspector Display Variable
+
+                    Rect Transform: 選擇要變更大小的核心組件
+
+                    Option: 更改欲變更大小的互動方式
+
+                    Mutiply Size: 相乘大小，該浮點與Text組件 FontSize 默認值，作乘積
+
+                    Animation Speed: 動畫速度
+
+                    Enter Speed: 互動\'開始\'的動畫曲線
+
+                    Leave Speed: 互動\'結束\'的動畫曲線
+
+                    # 可快速使uGUI包含的Text組件，進行簡易的互動
+
+                    # 該組件以 Text 組件的 FontSize 進行變更，因此只能變更Font大小。如需X或Y縮放需使用RectTransformScaler.cs`, 'Resource/OriginFile/csharpFile/UI/Sizer/LegacyTextSizer.cs');
+            }
             else if (paramname.getParameterByName("v", window.location.href).includes("MenuGeneric")) {
                 AddDocument('MenuGeneric 菜單工具', '作用: 運用UnityEditor.GenericMenu類，寫出簡易方法供使用，使用Start、Add、End方法即可完成菜單功能',
                     `# Parameter
@@ -94,6 +114,44 @@ var libdocument = (function () {
                     EndMenu(menu);
 
                     # 需要被放入事件當中，如: if(UnityEngine.GUILayout.Button("Test Menu"))，或是滑鼠鍵盤等事件`, 'Resource/OriginFile/csharpFile/UI/MenuGeneric/MenuGeneric.cs');
+            }
+            else if (paramname.getParameterByName("v", window.location.href).includes("RectTransformScaler")) {
+                AddDocument('RectTransformScaler', '作用: 動畫縮放UI Toolkit RectTransform Scale',
+                    `# Inspector Display Variable
+
+                    Rect Transform: 選擇要變更大小的核心組件
+
+                    Option: 更改欲變更大小的互動方式
+
+                    Mutiply Size: 相乘大小，該向量x與y是以原大小RectTransform組件內 Local Scale 的x與y分別作乘積
+
+                    Animation Speed: 動畫速度
+
+                    Enter Speed: 互動\'開始\'的動畫曲線
+
+                    Leave Speed: 互動\'結束\'的動畫曲線
+                    
+                    # 該組件是以 RectTransform 的 Scale 進行變更，因此父關係層能夠完整的控制子層的縮放`, 'Resource/OriginFile/csharpFile/UI/Sizer/RectTransformScaler.cs');
+            }
+            else if (paramname.getParameterByName("v", window.location.href).includes("RectTransformSizer")) {
+                AddDocument('RectTransformSizer', '作用: 動畫縮放UI Toolkit RectTransform SizeDelta',
+                    `# Inspector Display Variable
+
+                    Rect Transform: 選擇要變更大小的核心組件
+
+                    Option: 更改欲變更大小的互動方式
+
+                    Mutiply Size: 相乘大小，該向量x與y是以原大小RectTransform組件內sizeDelta的x與y分別作乘積
+
+                    Animation Speed: 動畫速度
+
+                    Enter Speed: 互動\'開始\'的動畫曲線
+
+                    Leave Speed: 互動\'結束\'的動畫曲線
+
+                    # 可快速使uGUI包含的RectTransform核心組件，進行簡易的用戶互動
+
+                    # 如要進行快速整體變形，應使用 RectTransformScaler.cs 組件。使用此組件，僅能讓當層RectTransform進行SizeDelta變更，因此如果變更需Text或TMP組件，需要使用LegacyTextSizer.cs或是TMPTextSizer.cs`, 'Resource/OriginFile/csharpFile/UI/Sizer/RectTransformSizer.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Searcher")) {
                 Searcher(true);
@@ -134,8 +192,25 @@ var libdocument = (function () {
                     }
                     # 初始化 Timer timer = new Timer() => m_timer = 0.0f;`, 'Resource/OriginFile/csharpFile/Timer/Timer.cs');
             }
-            else if (paramname.getParameterByName("v", window.location.href).includes("UI-Sizer")) {
-                UISizer(true);
+            else if (paramname.getParameterByName("v", window.location.href).includes("TMPTextSizer")) {
+                AddDocument('TMPTextSizer', '作用: 動畫縮放UI Toolkit TMP Text',
+                    `# Inspector Display Variable
+
+                    Rect Transform: 選擇要變更大小的核心組件
+
+                    Option: 更改欲變更大小的互動方式
+
+                    Mutiply Size: 相乘大小，該浮點與TextMeshProUGUI組件 FontSize 默認值，作乘積
+
+                    Animation Speed: 動畫速度
+
+                    Enter Speed: 互動\'開始\'的動畫曲線
+
+                    Leave Speed: 互動\'結束\'的動畫曲線
+
+                    # 可快速使TextMeshPro包含的TextMeshProUGUI組件，進行簡易的互動
+
+                    # 該組件以 TextMeshProUGUI 組件的 FontSize 進行變更，因此只能變更Font大小。如需X或Y縮放需使用RectTransformScaler.cs`, 'Resource/OriginFile/csharpFile/UI/Sizer/TMPTextSizer.cs');
             }
         }
         else {
@@ -320,130 +395,7 @@ var libdocument = (function () {
                                 });
                             });
                             hljs.highlightAll();
-                        }
-                    });
-        }, 100);
-    }
-    function UISizer(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>UI-Sizer 介面縮放</h2>' +
-            '<h6>' +
-            '<br><br>作用: 使用 RectTransformSizer.cs 组件至 unity uGUI' +
-            '<br>可快速使uGUI包含的RectTransform核心組件，進行簡易的用戶互動' +
-            '<br><span class="mark-pinkred">(如要進行快速整體變形，應使用 RectTransformScaler.cs 組件。使用該組件，僅能讓當層RectTransform進行SizeDelta變更，因此如果變更需Text或TMP組件，需要使用LegacyTextSizer.cs或是TMPTextSizer.cs)</span>' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Rect Transform: 選擇要變更大小的核心組件' +
-            '<br><br>Option: 更改欲變更大小的互動方式' +
-            '<br><br>Mutiply Size: 相乘大小，該向量x與y是以原大小RectTransform組件內sizeDelta的x與y分別作乘積' +
-            '<br><br>Animation Speed: 動畫速度' +
-            '<br><br>Enter Speed: 互動\'開始\'的動畫曲線' +
-            '<br><br>Leave Speed: 互動\'結束\'的動畫曲線' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-RectTransformSizer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-RectTransformSizer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">RectTransformSizer.cs  </div></pre>' +
-
-            '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>RectTransformScaler</h2>' +
-            '<h6>' +
-            '<br><br>作用: 使用 RectTransformScaler.cs 组件至 unity uGUI' +
-            '<br>可快速使uGUI包含的RectTransform核心組件，進行簡易的用戶互動' +
-            '<br><span class="mark-pinkred">(該組件是以 RectTransform 的 Scale 進行變更，因此父關係層能夠完整的控制子層的縮放。)</span>' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Rect Transform: 選擇要變更大小的核心組件' +
-            '<br><br>Option: 更改欲變更大小的互動方式' +
-            '<br><br>Mutiply Size: 相乘大小，該向量x與y是以原大小RectTransform組件內 Local Scale 的x與y分別作乘積' +
-            '<br><br>Animation Speed: 動畫速度' +
-            '<br><br>Enter Speed: 互動\'開始\'的動畫曲線' +
-            '<br><br>Leave Speed: 互動\'結束\'的動畫曲線' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-RectTransformScaler-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-RectTransformScaler-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">RectTransformScaler.cs  </div></pre>' +
-
-            '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>LegacyTextSizer</h2>' +
-            '<h6>' +
-            '<br><br>作用: 使用 LegacyTextSizer.cs 组件至 unity uGUI' +
-            '<br>可快速使uGUI包含的Text組件，進行簡易的互動' +
-            '<br><span class="mark-pinkred">(該組件以 Text 組件的 FontSize 進行變更，因此只能變更Font大小。如需X或Y縮放需使用RectTransformScaler.cs。)</span>' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Rect Transform: 選擇要變更大小的核心組件' +
-            '<br><br>Option: 更改欲變更大小的互動方式' +
-            '<br><br>Mutiply Size: 相乘大小，該浮點與Text組件 FontSize 默認值，作乘積' +
-            '<br><br>Animation Speed: 動畫速度' +
-            '<br><br>Enter Speed: 互動\'開始\'的動畫曲線' +
-            '<br><br>Leave Speed: 互動\'結束\'的動畫曲線' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-LegacyTextSizer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-LegacyTextSizer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">LegacyTextSizer.cs  </div></pre>' +
-
-            '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>TMPTextSizer</h2>' +
-            '<h6>' +
-            '<br><br>作用: 使用 TMPTextSizer.cs 组件至 unity uGUI' +
-            '<br>可快速使TextMeshPro包含的TextMeshProUGUI組件，進行簡易的互動' +
-            '<br><span class="mark-pinkred">(該組件以 TextMeshProUGUI 組件的 FontSize 進行變更，因此只能變更Font大小。如需X或Y縮放需使用RectTransformScaler.cs。)</span>' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Rect Transform: 選擇要變更大小的核心組件' +
-            '<br><br>Option: 更改欲變更大小的互動方式' +
-            '<br><br>Mutiply Size: 相乘大小，該浮點與TextMeshProUGUI組件 FontSize 默認值，作乘積' +
-            '<br><br>Animation Speed: 動畫速度' +
-            '<br><br>Enter Speed: 互動\'開始\'的動畫曲線' +
-            '<br><br>Leave Speed: 互動\'結束\'的動畫曲線' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-TMPTextSizer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-TMPTextSizer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">TMPTextSizer.cs  </div></pre>';
-        document.body.innerHTML += src;
-        redis(300);
-        setTimeout(() => {
-            fileutils.filetextinelements(['code-text-RectTransformSizer-cs',
-                'code-text-RectTransformScaler-cs',
-                'code-text-LegacyTextSizer-cs',
-                'code-text-TMPTextSizer-cs'],
-                ['Resource/OriginFile/csharpFile/UI/Sizer/RectTransformSizer.cs',
-                    'Resource/OriginFile/csharpFile/UI/Sizer/RectTransformScaler.cs',
-                    'Resource/OriginFile/csharpFile/UI/Sizer/LegacyTextSizer.cs',
-                    'Resource/OriginFile/csharpFile/UI/Sizer/TMPTextSizer.cs'], (t, text) => {
-                        t.textContent = text;
-                    }, () => {
-                        if (ck) {
-                            copycode("code-copy-RectTransformSizer-cs", "code-text-RectTransformSizer-cs");
-                            copycode("code-copy-RectTransformScaler-cs", "code-text-RectTransformScaler-cs");
-                            copycode("code-copy-LegacyTextSizer-cs", "code-text-LegacyTextSizer-cs");
-                            copycode("code-copy-TMPTextSizer-cs", "code-text-TMPTextSizer-cs");
-                            var downloadFiler = document.querySelectorAll('.download-file');
-                            downloadFiler.forEach(function (e) {
-                                e.addEventListener("click", () => {
-                                    if (e.innerText === "RectTransformSizer.cs  ") {
-                                        fileutils.download('RectTransformSizer.cs', 'Resource/OriginFile/csharpFile/UI/Sizer/RectTransformSizer.cs');
-                                    }
-                                    if (e.innerText === "RectTransformScaler.cs  ") {
-                                        fileutils.download('RectTransformScaler.cs', 'Resource/OriginFile/csharpFile/UI/Sizer/RectTransformScaler.cs');
-                                    }
-                                    if (e.innerText === "LegacyTextSizer.cs  ") {
-                                        fileutils.download('LegacyTextSizer.cs', 'Resource/OriginFile/csharpFile/UI/Sizer/LegacyTextSizer.cs');
-                                    }
-                                    if (e.innerText === "TMPTextSizer.cs  ") {
-                                        fileutils.download('TMPTextSizer.cs', 'Resource/OriginFile/csharpFile/UI/Sizer/TMPTextSizer.cs');
-                                    }
-                                });
-                            });
-                            hljs.highlightAll();
+                            liboption.init();
                         }
                     });
         }, 100);

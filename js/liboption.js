@@ -90,10 +90,14 @@ var liboption = (function () {
                                 bsb: "#777", bsba: "#336", csb: "#333", csba: "#558", p: bbtn, fc(atv) {
                                     storageutils.set(text, atv);
                                     if (atv) {
-                                        document.querySelector('code').style.setProperty('--code-white-space', 'pre-wrap');
+                                        document.querySelectorAll('code').forEach(code => {
+                                            code.style.setProperty('--code-white-space', 'pre-wrap');
+                                        });
                                     }
                                     else {
-                                        document.querySelector('code').style.setProperty('--code-white-space', 'unset');
+                                        document.querySelectorAll('code').forEach(code => {
+                                            code.style.setProperty('--code-white-space', 'unset');
+                                        });
                                     }
                                 }
                             });

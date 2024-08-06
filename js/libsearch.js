@@ -27,11 +27,14 @@ var libsearch = (function () {
             "FloatAES",
             "InitializationEvent",
             "IntAES",
+            "LegacyTextSizer",
             "MenuGeneric",
+            "RectTransformScaler",
+            "RectTransformSizer",
             "Searcher",
             "StringAES",
             "Timer",
-            "UI-Sizer"];
+            "TMPTextSizer"];
         var searchbar = document.querySelector('.search-bar');
         var searchbarfocus = true;
         searchbar.addEventListener("input", () => {
@@ -234,10 +237,25 @@ var libsearch = (function () {
                 b.appendChild(tagbase);
                 poco();
             }
+            else if (b.textContent === "LegacyTextSizer") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                engine();
+            }
             else if (b.textContent === "MenuGeneric") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
                 b.appendChild(tagbase);
                 poco();
+            }
+            else if (b.textContent === "RectTransformScaler") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                engine();
+            }
+            else if (b.textContent === "RectTransformSizer") {
+                b.innerHTML += "&nbsp;&nbsp;\n";
+                b.appendChild(tagbase);
+                engine();
             }
             else if (b.textContent === "Searcher") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
@@ -254,7 +272,7 @@ var libsearch = (function () {
                 b.appendChild(tagbase);
                 poco();
             }
-            else if (b.textContent === "UI-Sizer") {
+            else if (b.textContent === "TMPTextSizer") {
                 b.innerHTML += "&nbsp;&nbsp;\n";
                 b.appendChild(tagbase);
                 engine();
@@ -279,11 +297,14 @@ var libsearch = (function () {
                 Text.replace("#POCO", "").trim() === "FloatAES" ||
                 Text.replace("#Engine", "").trim() === "InitializationEvent" ||
                 Text.replace("#POCO", "").trim() === "IntAES" ||
+                Text.replace("#Engine", "").trim() === "LegacyTextSizer" ||
                 Text.replace("#POCO", "").trim() === "MenuGeneric" ||
+                Text.replace("#Engine", "").trim() === "RectTransformScaler" ||
+                Text.replace("#Engine", "").trim() === "RectTransformSizer" ||
                 Text.replace("#Engine", "").replace("#POCO", "").trim() === "Searcher" ||
                 Text.replace("#POCO", "").trim() === "StringAES" ||
                 Text.replace("#POCO", "").trim() === "Timer" ||
-                Text.replace("#Engine", "").trim() === "UI-Sizer") {
+                Text.replace("#Engine", "").trim() === "TMPTextSizer") {
                 a.href = "UnityLibrary.html" + "?v=" + searchbar.value;
                 setTimeout(() => {
                     a.click();
