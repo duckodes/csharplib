@@ -8,22 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Bootrap5css/bootstrap.css">
     <link rel="stylesheet" href="css/Bootrap5css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/main-scrollbar.css">
     <link rel="stylesheet" href="css/vs2015.min.css" id="code-style">
-    <link rel="stylesheet" href="css/private-library.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title></title>
 </head>
 
-<body style="background-color: #252525;">
+<body>
     <!-- Nav -->
-    <nav class="navbar no-select" style="background-color: rgb(35, 35, 35);
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;">
+    <nav class="navbar no-select">
         <div class="container justify-content-center">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -37,90 +30,8 @@
         </div>
     </nav>
 
-    <div class="lib-sources no-select" id="scroll-drag" style="display: none;">
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            A
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            B
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            C
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            D
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            E
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            F
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            G
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            H
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            I
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            J
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            K
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            L
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            M
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            N
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            O
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            P
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            Q
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            R
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            S
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            T
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            U
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            V
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            W
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            X
-        </div>
-        <div class="black-lib-sources" style="height: 70px;display: flex;align-items: center;justify-content: center;">
-            Y
-        </div>
-        <div class="white-lib-sources" style="height: 100px;display: flex;align-items: center;justify-content: center;">
-            Z
-        </div>
-    </div>
-
 </body>
 
-<script src="js/Bootstrap5js/bootstrap.bundle.min.js"></script>
 <script src="js/highlight.min.js"></script>
 <script src="js/paramname.js"></script>
 <script src="js/fileutils.js"></script>
@@ -132,35 +43,7 @@
 <script src="js/buttonutils.js"></script>
 <script src="js/contextmenuutils.js"></script>
 <script src="js/liboption.js"></script>
-<script src="js/alertmodal.js"></script>
 <script src="js/alertutils.js"></script>
-<script src="js/libsources.js"></script>
-<script src="js/scrollmousedrag.js"></script>
-<script>
-    scrollmousedrag.idrag("scroll-drag");
-</script>
-<script src="js/scrollcheck.js"></script>
-<script>
-    scrollcheck.winsy0(() => {
-        var libsrc = document.getElementById('scroll-drag');
-        libsrc.style.opacity = "1";
-        libsrc.style.marginLeft = "0px";
-    }, () => {
-        var libsrc = document.getElementById('scroll-drag');
-        libsrc.style.opacity = "1";
-        libsrc.style.marginLeft = "0px";
-    }, () => {
-        var libsrc = document.getElementById('scroll-drag');
-        libsrc.addEventListener('mousedown', () => {
-            libsrc.style.opacity = "1";
-        });
-        libsrc.addEventListener('touchstart', () => {
-            libsrc.style.opacity = "1";
-        });
-        libsrc.style.opacity = "0.2";
-        libsrc.style.marginLeft = "-15px";
-    });
-</script>
 <script src="js/libtags.js"></script>
 
 </html>

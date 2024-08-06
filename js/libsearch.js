@@ -184,9 +184,6 @@ var libsearch = (function () {
                     }
                 } else if (event.key === 'Enter') {
                     if (document.activeElement.className === "search-bar") {
-                        //if (currentIndex !== -1) {
-                        //buttons[currentIndex].click();
-                        //}
                         onclicksearch(searchbar.value);
                     }
                 }
@@ -197,7 +194,6 @@ var libsearch = (function () {
                         buttons[currentIndex].style.background = "#1a1b26";
                     }
                     currentIndex = index;
-                    //searchbar.value = buttons[currentIndex].innerText;
                 });
             });
         }

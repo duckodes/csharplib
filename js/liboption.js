@@ -1,7 +1,6 @@
 var liboption = (function () {
     return {
-        init: init,
-        isCodeNumberInit: false
+        init: init
     }
     function init() {
         fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/8hR7kL3pQ9sT6wE2.localstorage', (text) => {
@@ -10,14 +9,6 @@ var liboption = (function () {
             }
             else {
                 themepackage.vs2015("code-style");
-            }
-        });
-        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/i9RL6x1tAAUC0rKwbveo.localstorage', (text) => {
-            if (storageutils.get(text)) {
-                libsources.show();
-            }
-            else {
-                libsources.hide();
             }
         });
         fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/sdWs5sd5f48Dsdf47F65.localstorage', (text) => {
@@ -30,55 +21,24 @@ var liboption = (function () {
         });
         fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
             if (storageutils.get(text)) {
-                let timeoutId = setTimeout(() => {
-                    var codeBlock = document.querySelectorAll('code');
-                    codeBlock.forEach(element => {
-                        if (element.contentEditable === 'true') {
-                            var codeText = element.innerText;
-                            var lines = codeText.split('\n');
-                            var numberedCode = '';
-                            for (var i = 0; i < lines.length; i++) {
-                                numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
+                var codeBlock = document.querySelectorAll('code');
+                codeBlock.forEach(element => {
+                    if (element.contentEditable === 'true' || element.contentEditable === 'inherit') {
+                        var codeText = element.innerText;
+                        var lines = codeText.split('\n');
+                        var numberedCode = '';
+                        for (var i = 0; i < lines.length; i++) {
+                            numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
 
-                                if (i < lines.length - 1) {
-                                    numberedCode += '\n';
-                                }
+                            if (i < lines.length - 1) {
+                                numberedCode += '\n';
                             }
-                            element.innerHTML = numberedCode;
-                            element.innerHTML = hljs.highlightAuto(element.innerText).value;
-                            element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
-                            liboption.isCodeNumberInit = true;
                         }
-                    });
-                }, 1000);
-                let timer = setInterval(() => {
-                    if (typeof editable !== 'undefined' && editable.editorFocus) {
-                        clearTimeout(timeoutId);
-                        clearInterval(timer);
+                        element.innerHTML = numberedCode;
+                        element.innerHTML = hljs.highlightAuto(element.innerText).value;
+                        element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
                     }
-                }, 100);
-
-                setTimeout(() => {
-                    var codeBlock = document.querySelectorAll('code');
-                    codeBlock.forEach(element => {
-                        if (element.contentEditable === 'inherit') {
-                            var codeText = element.innerText;
-                            var lines = codeText.split('\n');
-                            var numberedCode = '';
-                            for (var i = 0; i < lines.length; i++) {
-                                numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
-
-                                if (i < lines.length - 1) {
-                                    numberedCode += '\n';
-                                }
-                            }
-                            element.innerHTML = numberedCode;
-                            element.innerHTML = hljs.highlightAuto(element.innerText).value;
-                            element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
-                            liboption.isCodeNumberInit = true;
-                        }
-                    });
-                }, 1000);
+                });
             }
         });
         var option = document.getElementById("option");
@@ -111,29 +71,6 @@ var liboption = (function () {
                                     }
                                     else {
                                         themepackage.vs2015("code-style");
-                                    }
-                                }
-                            });
-                        });
-                        fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/i9RL6x1tAAUC0rKwbveo.localstorage', (text) => {
-                            var bbtn = document.createElement("div");
-                            bbtn.style.display = "flex";
-                            bbtn.style.alignItems = "center";
-                            bbtn.style.flexDirection = "row";
-                            var btn = document.createElement("div");
-                            btn.innerText = "資源(A~Z)";
-                            btn.style.width = "70%";
-                            c.appendChild(bbtn);
-                            bbtn.appendChild(btn);
-                            buttonutils.swb({
-                                a: storageutils.get(text), bsw: "40px", csw: "14px", bsh: "20px", csh: "14px", bsbdr: "15px", csbdr: "15px", fs: 5,
-                                bsb: "#777", bsba: "#336", csb: "#333", csba: "#558", p: bbtn, fc(atv) {
-                                    storageutils.set(text, atv);
-                                    if (atv) {
-                                        libsources.show();
-                                    }
-                                    else {
-                                        libsources.hide();
                                     }
                                 }
                             });
@@ -216,4 +153,3 @@ var liboption = (function () {
         });
     }
 }());
-liboption.init();

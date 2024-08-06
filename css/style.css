@@ -1,0 +1,119 @@
+@import url(default.css);
+@import url(common.css);
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+pre {
+    margin-top: 3dvh;
+    width: 100dvw;
+    max-width: 1000px;
+    padding: 20px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+code {
+    white-space: var(--code-white-space);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #707070 transparent;
+}
+.info>code{
+    margin-bottom: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(35, 35, 35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.search-bar {
+    border-radius: 20px;
+    justify-content: flex-start;
+    background-color: transparent;
+    color: white;
+    border: 1px solid;
+    border-color: #565f89;
+    padding-left: 10px;
+    outline: 0;
+    width: 130px;
+    margin: 5px;
+    transition: width 0.3s ease-in-out;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-overflow: ellipsis;
+}
+
+.search-bar:focus {
+    border-color: #7dcfff;
+    width: 100%;
+}
+
+.search-bar::placeholder {
+    font-size: 25px;
+}
+
+#option {
+    color: #777;
+    font-size: larger;
+    background-color: #303030;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    rotate: 90deg;
+    cursor: pointer;
+}
+
+#option:hover {
+    background-color: #353535;
+}
+
+#option:active {
+    background-color: #151515;
+}
+
+.info {
+    color: white;
+    width: 100%;
+    white-space: pre-line;
+}
+
+.copy-paste {
+    cursor: pointer;
+    color: white;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.download-file {
+    cursor: pointer;
+    color: white;
+    background-color: #303030;
+    margin-top: 0px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 20px;
+    white-space: pre-wrap;
+}

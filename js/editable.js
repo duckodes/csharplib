@@ -1,31 +1,23 @@
 var editable = (function () {
     return {
         editablecontent: editablecontent,
-        editablecontentHTML: editablecontentHTML,
-        editorFocus: false,
+        editablecontentHTML: editablecontentHTML
     };
     function editablecontent(id) {
         const editor = document.getElementById(id);
         editor.setAttribute("contenteditable", "true");
-        let isNotInitCodeNumber = false;
         editor.addEventListener('focus', () => {
-            editable.editorFocus = true;
-            isNotInitCodeNumber = true;
-            if (liboption.isCodeNumberInit) {
-                var lines = editor.innerText.split('\n');
-                var processedLines = lines.map(function (line) {
-                    return line.substring(3);
-                });
-                var processedCode = processedLines.join('\n');
-                editor.innerHTML = processedCode;
-                editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
-            }
-            //editor.innerHTML = editor.innerText;
+            var lines = editor.innerText.split('\n');
+            var processedLines = lines.map(function (line) {
+                return line.substring(lines.length.toString().length + 1);
+            });
+            var processedCode = processedLines.join('\n');
+            editor.innerHTML = processedCode;
+            editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
         });
         editor.addEventListener('blur', () => {
-            editable.editorFocus = false;
             fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
-                if (storageutils.get(text) && isNotInitCodeNumber) {
+                if (storageutils.get(text)) {
                     var codeText = editor.innerText;
                     var lines = codeText.split('\n');
                     var numberedCode = '';
@@ -39,10 +31,8 @@ var editable = (function () {
                     editor.innerHTML = numberedCode;
                     editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
                     editor.innerHTML = editor.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
-                    liboption.isCodeNumberInit = true;
                 }
             });
-            //editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
         });
         editor.addEventListener("input", () => {
             editor.scrollTop = editor.scrollHeight;

@@ -6,7 +6,7 @@ function copycode(copybuttonid, textcopyid) {
 
         var lines = text.split('\n');
         var processedLines = lines.map(function (line) {
-            return line.substring(3);
+            return line.substring(lines.length.toString().length + 1);
         });
         var processedCode = processedLines.join('\n');
 

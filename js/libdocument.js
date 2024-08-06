@@ -5,306 +5,187 @@ var libdocument = (function () {
     function init() {
         if (paramname.getParameterByName("v", window.location.href)) {
             if (paramname.getParameterByName("v", window.location.href).includes("AESEncryption")) {
-                AddDocument("AES 加密解密", "加密資料來源", "", "AESEncryption.cs", "AESEncryption", 'Resource/OriginFile/csharpFile/Security/AESEncryption.cs', true);
+                AddDocument('AES 加密解密', '作用: 加密資料來源',
+                    `comming soon..:
+                    `, 'Resource/OriginFile/csharpFile/Security/AESEncryption.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("AudioCollection")) {
-                AudioCollection(true);
+                AddDocument('AudioCollection 音頻驅動器', '作用: 可設置需要的音频源(AudioSource)，及對應的音頻數據資料源(AudioClip)',
+                    ` # Inspector Display Variable
+
+                    Audio Collector: 該List包含兩個置入，為AudioSource、AudioClip`, 'Resource/OriginFile/csharpFile/Audio/AudioCollection.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Counter")) {
-                Counter(true);
+                AddDocument('Counter 計數工具', '作用: 可產生計數 GUI',
+                    `# Inspector Display Variable
+                    
+                    Settings: 選項有UI、Normal，UI可調整GUI介面， Normal可調整變數等功能
+
+                    Display: 該選項是控制數字的顯示方式，可顯示SI制或是只有秒，帶有Decimal 2為十進制，會顯示兩位數，如: 01、02
+
+                    Option: KeyCode是由按鍵控制計數方式，DeltaTime是由時間控制
+
+                    Calculation: 可選擇該數字是要增加還是減少
+
+                    Default Count: 默認計數
+
+                    Fluctuation: 計數要增加或減少的值
+                    
+                    Per: 頻率，若為"1"該計數以每"1"秒運算一次，以此類推
+
+                    Min Max: 設定計數最小值與最大值`, 'Resource/OriginFile/csharpFile/UI/Counter/Counter.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("DraggablePanel")) {
-                DraggablePanel(true);
+                AddDocument('DraggablePanel 浮動窗口', '作用: 可產生GUI.Window生成的浮動窗口',
+                    `# Inspector Display Variable
+
+                    Rect: 調整初始位置及大小
+
+                    Title Size: 標題的大小
+
+                    Text Anchor: 標題文字位置
+
+                    Min Size: 此拖動視窗可縮放的最小大小
+
+                    Resize Cursor: 當滑鼠移動進入右下角可縮放區域時，顯示的滑鼠樣式`, 'Resource/OriginFile/csharpFile/UI/DraggablePanel/DraggablePanel.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("FloatAES")) {
-                AddDocument("FloatAES 浮點AES使用", "加密資料來源", "", "FloatAES.cs", "FloatAES", 'Resource/OriginFile/csharpFile/Security/FloatAES.cs', true);
+                AddDocument('FloatAES 浮點AES使用', '作用: 加密資料來源',
+                    `comming soon..:
+                    `, 'Resource/OriginFile/csharpFile/Security/FloatAES.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("InitializationEvent")) {
-                InitializationEvent(true);
+                AddDocument('Initialization Event 生命週期初始化事件', '作用: 可新增需要的Initialization對象作用的Event',
+                    `# Inspector Display Variable
+
+                    Add Initialization Event: 可開啟需要初始化對象的事件
+
+                    # 再次點擊關閉並不會移除之前新增的對象，必須要移除該Event內的對象，才會移除`, 'Resource/OriginFile/csharpFile/Event/InitializationEvent.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("IntAES")) {
-                AddDocument("IntAES 整數AES使用", "加密資料來源", "", "IntAES.cs", "IntAES", 'Resource/OriginFile/csharpFile/Security/IntAES.cs', true);
+                AddDocument('IntAES 整數AES使用', '作用: 加密資料來源',
+                    `comming soon..:
+                    `, 'Resource/OriginFile/csharpFile/Security/IntAES.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("MenuGeneric")) {
-                MenuGeneric(true);
+                AddDocument('MenuGeneric 菜單工具', '作用: 運用UnityEditor.GenericMenu類，寫出簡易方法供使用，使用Start、Add、End方法即可完成菜單功能',
+                    `# Parameter
+
+                    position: 生成菜單位置
+
+                    menu: 這是一個out參數，將menu給予EndMenu即可，在StartMenu與EndMenu之間也可以更改menu的設置
+                    
+                    menuPosition: 這也是一個out參數，將menuPosition給予EndMenu即可
+
+                    itemName: 菜單選項的名稱
+
+                    check: 菜單選項是否要具有打勾
+                    
+                    menuFunction: 菜單按下去運用方法
+                    
+                    # EX 1
+                    StartMenu(new Vector2(0, 0), out GenericMenu menu, out Vector2 menuPosition);
+                    AddMenu(menu, "Test1", false, () => { // TODO:點擊菜單作用域 });
+                    EndMenu(menu, menuPosition);
+
+                    # EX 2
+                    StartMenu(out GenericMenu menu);
+                    AddMenu(menu, "Test2", false, () => { // TODO:點擊菜單作用域 });
+                    EndMenu(menu);
+
+                    # 需要被放入事件當中，如: if(UnityEngine.GUILayout.Button("Test Menu"))，或是滑鼠鍵盤等事件`, 'Resource/OriginFile/csharpFile/UI/MenuGeneric/MenuGeneric.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Searcher")) {
                 Searcher(true);
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("StringAES")) {
-                AddDocument("StringAES 字串AES使用", "加密資料來源", "", "StringAES.cs", "StringAES", 'Resource/OriginFile/csharpFile/Security/StringAES.cs', true);
+                AddDocument('StringAES 字串AES使用', '作用: 加密資料來源',
+                    `comming soon..:
+                    `, 'Resource/OriginFile/csharpFile/Security/StringAES.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("Timer")) {
-                Timer(true);
+                AddDocument('Timer 時間軸(生命週期調整)', '作用: 生命週期Update()，進行更新次數變化',
+                    `# Parameter
+
+                    action: 在action裡面，會依照指定的時間進行變更
+                    
+                    per: 每幾秒更新一次update
+                    
+                    # EX 1
+                    public class Test : MonoBehaviour
+                    {
+                    \t    private void Update()
+                    \t    {
+                    \t\t        Update(() => {
+                    \t\t\t            // TODO: 每一秒更新一次
+                    \t\t        }, 1);
+                    \t    }
+                    }
+                    # EX 2
+                    public class Test : MonoBehaviour
+                    {
+                    \t    private void Update()
+                    \t    {
+                    \t\t       Update((m_timer) => {
+                    \t\t\t            // TODO: 每一秒更新一次
+                    \t\t\t            // m_timer值，可進行m_timer判斷
+                    \t\t        }, 1);
+                    \t    }
+                    }
+                    # 初始化 Timer timer = new Timer() => m_timer = 0.0f;`, 'Resource/OriginFile/csharpFile/Timer/Timer.cs');
             }
             else if (paramname.getParameterByName("v", window.location.href).includes("UI-Sizer")) {
                 UISizer(true);
             }
-            libsourceselect(generateAlphabetSequence(paramname.getParameterByName("v", window.location.href)));
         }
         else {
             window.location.href = "UGPrivateLibrary.html";
         }
-        function libsourceselect(n) {
-            var elmt = document.querySelector('.lib-sources.no-select').children[n];
-            elmt.classList += " select-lib";
+    }
+    function AddDocument(title, todo, info, csfileUrl) {
+        var src = '<!-- Code -->' +
+            '<pre class="re-link">' +
+            '<div class="info">' +
+            '<h1>' +
+            title +
+            '</h1>' +
+            todo +
+            '<code class="language-yaml" contenteditable="false">' +
+            info.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;') +
+            '</code>' +
+            '</div>' +
+            '<div id="code-copy-' + getLastSegment(csfileUrl).replace('.cs', '') + '-cs" class="no-select copy-paste">' +
+            ' <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>' +
+            ' copy' +
+            '</div>' +
+            '<code class="language-csharp" id="code-text-' + getLastSegment(csfileUrl).replace('.cs', '') + '-cs">' +
+            '</code>' +
+            '<div class="no-select download-file" title="下載">' +
+            getLastSegment(csfileUrl) +
+            '</div>' +
+            '</pre>';
+        document.body.innerHTML += src;
+        redis();
+        setTimeout(() => {
+            fileutils.filetextinelement('code-text-' + getLastSegment(csfileUrl).replace('.cs', '') + '-cs', csfileUrl, (t, text) => {
+                t.textContent = text;
+            }, () => {
+                copycode("code-copy-" + getLastSegment(csfileUrl).replace('.cs', '') + "-cs", "code-text-" + getLastSegment(csfileUrl).replace('.cs', '') + "-cs");
+                var downloadFiler = document.querySelectorAll('.download-file');
+                downloadFiler.forEach(function (e) {
+                    e.addEventListener("click", () => {
+                        if (e.innerText === getLastSegment(csfileUrl)) {
+                            fileutils.download(getLastSegment(csfileUrl), csfileUrl);
+                        }
+                    });
+                });
+                hljs.highlightAll();
+                liboption.init();
+            });
+        }, 100);
+        function getLastSegment(path) {
+            return path.slice(path.lastIndexOf('/') + 1);
         }
-        function generateAlphabetSequence(str) {
-            const firstChar = str.toLowerCase().charAt(0);
-
-            if (firstChar >= 'a' && firstChar <= 'z') {
-                const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-                const startIndex = alphabet.indexOf(firstChar);
-                return startIndex;
-            } else {
-                return "請輸入以英文字母開頭的字串。";
-            }
-        }
-    }
-    function AddDocument(title, todo, variables, filename, identifier, csfileUrl, ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>' + title + '</h2>' +
-            '<h6>' +
-            '<br><br>作用: ' + todo +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            variables +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-' + identifier + '-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-' + identifier + '-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">' + filename +'  </div></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-' + identifier + '-cs', csfileUrl, (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-"+ identifier + "-cs", "code-text-" + identifier + "-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === filename + "  ") {
-                                fileutils.download(filename, csfileUrl);
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
-    }
-    function Counter(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>Counter 計數工具</h2>' +
-            '<h6>' +
-            '<br><br>作用: 可產生計數 GUI' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Settings: 選項有UI、Normal，UI可調整GUI介面， Normal可調整變數等功能' +
-            '<br><br>Display: 該選項是控制數字的顯示方式，可顯示SI制或是只有秒，帶有Decimal 2為十進制，會顯示兩位數，如: 01、02' +
-            '<br><br>Option: KeyCode是由按鍵控制計數方式，DeltaTime是由時間控制' +
-            '<br><br>Calculation: 可選擇該數字是要增加還是減少' +
-            '<br><br>Default Count: 默認計數' +
-            '<br><br>Fluctuation: 計數要增加或減少的值' +
-            '<br><br>Per: 頻率，若為"1"該計數以每"1"秒運算一次，以此類推' +
-            '<br><br>Min Max: 設定計數最小值與最大值' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-Counter-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-Counter-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Counter.cs  </div></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-Counter-cs', 'Resource/OriginFile/csharpFile/UI/Counter/Counter.cs', (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-Counter-cs", "code-text-Counter-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === "Counter.cs  ") {
-                                fileutils.download('Counter.cs', 'Resource/OriginFile/csharpFile/UI/Counter/Counter.cs');
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
-    }
-    function AudioCollection(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>AudioCollection 音頻驅動器</h2>' +
-            '<h6>' +
-            '<br><br>作用: 可設置需要的音频源(AudioSource)，及對應的音頻數據資料源(AudioClip)' +
-            '<br><span class="mark-pinkred">(若使用AudioCollection.cs內方法，如:使用Play()方法，AudioSource就會在方法裡面對應AudioClip)</span>' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Audio Collector: 該List包含兩個置入，為AudioSource、AudioClip' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-AudioCollection-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-AudioCollection-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">AudioCollection.cs  </div></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-AudioCollection-cs', 'Resource/OriginFile/csharpFile/Audio/AudioCollection.cs', (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-AudioCollection-cs", "code-text-AudioCollection-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === "AudioCollection.cs  ") {
-                                fileutils.download('AudioCollection.cs', 'Resource/OriginFile/csharpFile/Audio/AudioCollection.cs');
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
-    }
-    function DraggablePanel(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>DraggablePanel 浮動窗口</h2>' +
-            '<h6>' +
-            '<br><br>作用: 可產生GUI.Window生成的浮動窗口' +
-
-            '<br><br><br>使用: ' +
-            '<br>1.置入unity空物件' +
-            '<br>2.拖動標題欄位即可移動' +
-            '<br>3.視窗右下角的位置按下滑鼠左鍵可調整視窗大小' +
-            '<br>4.視窗右上角放大及關閉按鈕' +
-            '<span class="mark-place">' +
-            '<br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Rect: 調整初始位置及大小' +
-            '<br><br>Title Size: 標題的大小' +
-            '<br><br>Text Anchor: 標題文字位置' +
-            '<br><br>Min Size: 此拖動視窗可縮放的最小大小' +
-            '<br><br>Resize Cursor: 當滑鼠移動進入右下角可縮放區域時，顯示的滑鼠樣式' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br></div><div id="code-copy-DraggablePanel-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-DraggablePanel-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">DraggablePanel.cs  </div></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-DraggablePanel-cs', 'Resource/OriginFile/csharpFile/UI/DraggablePanel/DraggablePanel.cs', (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-DraggablePanel-cs", "code-text-DraggablePanel-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === "DraggablePanel.cs  ") {
-                                fileutils.download('DraggablePanel.cs', 'Resource/OriginFile/csharpFile/UI/DraggablePanel/DraggablePanel.cs');
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
-    }
-    function InitializationEvent(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>Initialization Event 生命週期初始化事件</h2>' +
-            '<h6>' +
-            '<br><br>作用: 可新增需要的Initialization對象作用的Event' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Unity Inspector Display Variable ===&gt;&gt;' +
-            '<br><br>Add Initialization Event: 可開啟需要初始化對象的事件' +
-            '<br>再次點擊關閉並不會移除之前新增的對象，必須要移除該Event內的對象，才會移除' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-InitializationEvent-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-InitializationEvent-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">InitializationEvent.cs  </div></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-InitializationEvent-cs', 'Resource/OriginFile/csharpFile/Event/InitializationEvent.cs', (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-InitializationEvent-cs", "code-text-InitializationEvent-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === "InitializationEvent.cs  ") {
-                                fileutils.download('InitializationEvent.cs', 'Resource/OriginFile/csharpFile/Event/InitializationEvent.cs');
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
-    }
-    function MenuGeneric(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>MenuGeneric 菜單工具</h2>' +
-            '<h6>' +
-            '<br><br>作用: 運用UnityEditor.GenericMenu類，寫出簡易方法供使用，使用Start、Add、End方法即可完成菜單功能' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Parameter ===&gt;&gt;' +
-            '<br><br>position: 生成菜單位置' +
-            '<br><br>menu: 這是一個out參數，將menu給予EndMenu即可' +
-            '<br>當然在StartMenu與EndMenu之間也可以更改menu的設置' +
-            '<br><br>menuPosition: 這也是一個out參數，將menuPosition給予EndMenu即可' +
-            '<br><br>itemName: 菜單選項的名稱' +
-            '<br><br>check: 菜單選項是否要具有打勾' +
-            '<br><br>menuFunction: 菜單按下去運用方法' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-MenuGeneric-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-MenuGeneric-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">MenuGeneric.cs  </div></pre>' +
-            '<pre class="re-link" style="border-radius: 10px;"><code>示範寫法 1.' +
-            '\n&ensp;&ensp;&ensp;&ensp;StartMenu(new Vector2(0, 0), out GenericMenu menu, out Vector2 menuPosition);' +
-            '\n&ensp;&ensp;&ensp;&ensp;AddMenu(menu, "Test1", false, () => { //TODO:點擊菜單作用域 });' +
-            '\n&ensp;&ensp;&ensp;&ensp;EndMenu(menu, menuPosition);' +
-
-            '\n\n示範寫法 2.' +
-            '\n&ensp;&ensp;&ensp;&ensp;StartMenu(out GenericMenu menu);' +
-            '\n&ensp;&ensp;&ensp;&ensp;AddMenu(menu, "Test2", false, () => { //TODO:點擊菜單作用域 });' +
-            '\n&ensp;&ensp;&ensp;&ensp;EndMenu(menu);' +
-
-            '\n\n(當然這需要被放入事件當中，如: if(UnityEngine.GUILayout.Button("Test Menu"))，或是滑鼠鍵盤等事件)</code></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-MenuGeneric-cs', 'Resource/OriginFile/csharpFile/UI/MenuGeneric/MenuGeneric.cs', (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-MenuGeneric-cs", "code-text-MenuGeneric-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === "MenuGeneric.cs  ") {
-                                fileutils.download('MenuGeneric.cs', 'Resource/OriginFile/csharpFile/UI/MenuGeneric/MenuGeneric.cs');
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
     }
     function Searcher(ck) {
         var src = '<!-- Code -->' +
@@ -443,65 +324,6 @@ var libdocument = (function () {
                     });
         }, 100);
     }
-    function Timer(ck) {
-        var src = '<!-- Code -->' +
-            '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
-            '<br><br><br><h2>Timer 時間軸(生命週期調整)</h2>' +
-            '<h6>' +
-            '<br><br>作用: 可讓 生命週期Update()，進行時間調整' +
-
-            '<span class="mark-place">' +
-            '<br><br><br><br>&lt;&lt;=== Parameter ===&gt;&gt;' +
-            '<br><br>action: 在action裡面，會依照指定的時間進行變更' +
-            '<br><br>per: 每幾秒更新一次update' +
-            '</span>' +
-            '</h6>' +
-            '<br><br><br><br></div><div id="code-copy-Timer-cs" class="no-select" style="z-index: 1;cursor: pointer;color: white;background-color: #1e1e1e;position: relative;margin-bottom: 0px;height: 21px; border-top-left-radius: 7px;border-top-right-radius: 7px;"> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> copy </div><code class="language-csharp" id="code-text-Timer-cs">' +
-            '</code><div class="no-select download-file" style="cursor: pointer;z-index: 0.5;color: white;background-color: #303030;margin-top: 0px;border-bottom-left-radius: 7px;border-bottom-right-radius: 7px;display: flex;align-items: center;justify-content: right;white-space: pre-wrap;" title="下載">Timer.cs  </div></pre>' +
-            '<pre class="re-link" style="border-radius: 10px;"><code>示範寫法 1.' +
-            '\n    public class Test : MonoBehaviour' +
-            '\n    {' +
-            '\n        private void Update()' +
-            '\n        {' +
-            '\n            Update(() => {' +
-            '\n                //TODO: 每一秒更新一次' +
-            '\n            }, 1);' +
-            '\n        }' +
-            '\n    }' +
-
-            '\n\n示範寫法 2.' +
-            '\n    public class Test : MonoBehaviour' +
-            '\n    {' +
-            '\n        private void Update()' +
-            '\n        {' +
-            '\n            Update((m_time) => {' +
-            '\n                //TODO: 每一秒更新一次，並且傳入m_time值，可進行m_time操作' +
-            '\n            }, 1);' +
-            '\n        }' +
-            '\n    }' +
-
-            '\n\n進行初始化，Timer timer = new Timer()，會進行m_timer歸0</code></pre>';
-        document.body.innerHTML += src;
-        redis();
-        setTimeout(() => {
-            fileutils.filetextinelement('code-text-Timer-cs', 'Resource/OriginFile/csharpFile/Timer/Timer.cs', (t, text) => {
-                t.textContent = text;
-            }, () => {
-                if (ck) {
-                    copycode("code-copy-Timer-cs", "code-text-Timer-cs");
-                    var downloadFiler = document.querySelectorAll('.download-file');
-                    downloadFiler.forEach(function (e) {
-                        e.addEventListener("click", () => {
-                            if (e.innerText === "Timer.cs  ") {
-                                fileutils.download('Timer.cs', 'Resource/OriginFile/csharpFile/Timer/Timer.cs');
-                            }
-                        });
-                    });
-                    hljs.highlightAll();
-                }
-            });
-        }, 100);
-    }
     function UISizer(ck) {
         var src = '<!-- Code -->' +
             '<pre class="re-link"><div class="no-select" style="color: white;width: 100%; margin-bottom: -50px;text-align: center;white-space: pre-line;">' +
@@ -625,12 +447,6 @@ var libdocument = (function () {
                         }
                     });
         }, 100);
-    }
-    function relink() {
-        var elmt = document.querySelectorAll('.re-link');
-        elmt.forEach(element => {
-            element.remove();
-        });
     }
     function redis(t = 150) {
         var elmt = document.querySelectorAll('.re-link');
