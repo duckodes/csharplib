@@ -63,6 +63,8 @@ code {
 
 .search-bar::placeholder {
     font-size: 25px;
+    transform: scaleX(-1);
+    text-align: right;
 }
 
 #option {
