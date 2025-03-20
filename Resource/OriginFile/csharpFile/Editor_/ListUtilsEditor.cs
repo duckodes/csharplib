@@ -2,7 +2,7 @@
 using UnityEditor;
 
 /// <summary>
-/// §ó§ïListªºname
+/// æ›´æ”¹Listçš„name
 /// </summary>
 [CustomEditor(typeof(ListUtils))]
 public class ListUtilsEditor : Editor
