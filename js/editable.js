@@ -6,31 +6,22 @@ var editable = (function () {
     function editablecontent(id) {
         const editor = document.getElementById(id);
         editor.setAttribute("contenteditable", "true");
-        editor.addEventListener('focus', () => {
-            var lines = editor.innerText.split('\n');
-            var processedLines = lines.map(function (line) {
-                return line.substring(lines.length.toString().length + 1);
+        editor.addEventListener('focus', async () => {
+            fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
+                if (!storageutils.get(text)) return;
+                var lines = editor.innerText.split('\n');
+                var processedLines = lines.map(function (line) {
+                    return line.substring(lines.length.toString().length + 1);
+                });
+                var processedCode = processedLines.join('\n');
+                editor.innerHTML = processedCode;
+                editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
             });
-            var processedCode = processedLines.join('\n');
-            editor.innerHTML = processedCode;
-            editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
         });
         editor.addEventListener('blur', () => {
             fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/5sWfs5fFGOs5g7RsdMBS.localstorage', (text) => {
                 if (storageutils.get(text)) {
-                    var codeText = editor.innerText;
-                    var lines = codeText.split('\n');
-                    var numberedCode = '';
-                    for (var i = 0; i < lines.length; i++) {
-                        numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
-
-                        if (i < lines.length - 1) {
-                            numberedCode += '\n';
-                        }
-                    }
-                    editor.innerHTML = numberedCode;
-                    editor.innerHTML = hljs.highlightAuto(editor.innerText).value;
-                    editor.innerHTML = editor.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
+                    liboption.addCodeNum(editor);
                 }
             });
         });

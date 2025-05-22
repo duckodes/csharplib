@@ -1,6 +1,22 @@
 var liboption = (function () {
     return {
-        init: init
+        init: init,
+        addCodeNum: addCodeNum
+    }
+    function addCodeNum(element) {
+        var codeText = element.innerText;
+        var lines = codeText.split('\n');
+        var numberedCode = '';
+        for (var i = 0; i < lines.length; i++) {
+            numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
+
+            if (i < lines.length - 1) {
+                numberedCode += '\n';
+            }
+        }
+        element.innerHTML = numberedCode;
+        element.innerHTML = hljs.highlightAuto(element.innerText).value;
+        element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select codenum-atv" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
     }
     function init() {
         fileutils.ReadFileText('Resource/Register/localstorage.ordinary-level/8hR7kL3pQ9sT6wE2.localstorage', (text) => {
@@ -24,19 +40,7 @@ var liboption = (function () {
                 var codeBlock = document.querySelectorAll('code');
                 codeBlock.forEach(element => {
                     if (element.contentEditable === 'true' || element.contentEditable === 'inherit') {
-                        var codeText = element.innerText;
-                        var lines = codeText.split('\n');
-                        var numberedCode = '';
-                        for (var i = 0; i < lines.length; i++) {
-                            numberedCode += 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' + (i + 1).toString().padEnd(lines.length.toString().length, ' ') + ' ' + '&nbsp;' + lines[i];
-
-                            if (i < lines.length - 1) {
-                                numberedCode += '\n';
-                            }
-                        }
-                        element.innerHTML = numberedCode;
-                        element.innerHTML = hljs.highlightAuto(element.innerText).value;
-                        element.innerHTML = element.innerHTML.replace(/\aBcDeFgHiJkLmNoPqRsTuVwXyZ/g, '<div class="no-select" contenteditable="false" style="display: inline-block;color: #555;">').replace(/&nbsp;/g, '</div>');
+                        addCodeNum(element);
                     }
                 });
             }
@@ -116,6 +120,20 @@ var liboption = (function () {
                                 a: storageutils.get(text), bsw: "40px", csw: "14px", bsh: "20px", csh: "14px", bsbdr: "15px", csbdr: "15px", fs: 5,
                                 bsb: "#777", bsba: "#336", csb: "#333", csba: "#558", p: bbtn, fc(atv) {
                                     storageutils.set(text, atv);
+                                    if (atv && !document.querySelector('.codenum-atv')) {
+                                        var codeBlock = document.querySelectorAll('code');
+                                        codeBlock.forEach(element => {
+                                            if (element.contentEditable === 'true' || element.contentEditable === 'inherit') {
+                                                addCodeNum(element);
+                                            }
+                                        });
+                                    }
+                                    else {
+                                        var codenumatv = document.querySelectorAll('.codenum-atv');
+                                        codenumatv.forEach(element => {
+                                            element.remove();
+                                        });
+                                    }
                                 }
                             });
                         });
